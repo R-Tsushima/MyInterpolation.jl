@@ -2,8 +2,12 @@ function lin_inter(grid,vals)
     function func(x::Real)
         if x < grid[1]
             print("Error")
-        elseif x >= grid[end]
+        elseif x > grid[end]
             print("Error")
+        elseif x == grid[1]
+            return vals[1]
+        elseif x == grid[end]
+            return vals[end]
         else
             index = searchsortedlast(grid,x)
             return (vals[index+1] - vals[index])/(grid[index+1] - grid[index])*(x - grid[index]) + vals[index]
