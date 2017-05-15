@@ -1,6 +1,6 @@
 module MyInterpolations
 export my_lin_interp
-function my_lin_interp.(grid,vals)
+function my_lin_interp(grid,vals)
     function func(x::Real)
         if x <= grid[1]
             return (vals[2] - vals[1])/(grid[2] - grid[1])*(x - grid[1]) + vals[1]
